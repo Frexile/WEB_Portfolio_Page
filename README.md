@@ -10,4 +10,4 @@ All work have done using [Visual Studio Code](https://code.visualstudio.com/)
 4. Preparation done!
 
 ## Portfolio Site template
-[My site template :)](https://gocers.github.io/WEB_Portfolio_Page/)
+[My site template :octocat:](https://gocers.github.io/WEB_Portfolio_Page/)
