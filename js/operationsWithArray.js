@@ -36,6 +36,29 @@ function max(array) {
     return max;
 }
 
+var styles = {
+    edge : 'background: skyblue',
+    pivot : 'background: gold', 
+    common : ''
+}
+
+function visualizeArray(arr, left, right, pivot) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[left] || arr[i] === arr[right]){
+            console.log(`%c ${arr[i]} ← pointer`, styles.edge)
+        } 
+        else if (arr[i] === pivot){
+            console.log(`%c ${arr[i]} ← pivot element`, styles.pivot)
+        }
+        else {
+            console.log(`%c ${arr[i]} `, styles.common)
+        }
+    }
+
+    console.log("------------------------")
+}
+
 
 function quickSort(arr) {
     return quickSortL(arr, 0, arr.length - 1);
@@ -47,6 +70,8 @@ function quickSortL(array, left, right) {
     }
     
     let pivot = array[parseInt(left + (right - left)/2)];
+    console.log(pivot)
+    visualizeArray(arr,left,right,pivot)
     let splitIndex = getSplitter(array, left, right, pivot);
 
     quickSortL(array, left, splitIndex - 1);
@@ -57,16 +82,19 @@ function getSplitter(arr, left, right, pivot) {
     while (left <= right){
         while (arr[left] < pivot){
             left++;
+            visualizeArray(arr,left,right,pivot)
         }
 
         while (arr[right] > pivot){
             right--;
+            visualizeArray(arr,left,right,pivot)
         }
 
         if (left <= right) {
             swap(arr, left, right);
             left++;
             right--;
+            visualizeArray(arr,left,right,pivot)
         }
     }
 
