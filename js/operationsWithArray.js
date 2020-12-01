@@ -70,7 +70,7 @@ function quickSortL(array, left, right) {
     }
     
     let pivot = array[parseInt(left + (right - left)/2)];
-    console.log(pivot)
+    // console.log(pivot)
     visualizeArray(arr,left,right,pivot)
     let splitIndex = getSplitter(array, left, right, pivot);
 
